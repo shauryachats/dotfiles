@@ -1,0 +1,14 @@
+<snippet>
+	<description>bits/std</description>
+	<content><![CDATA[#include<bits/stdc++.h>
+using namespace std;
+#define MOD 1000000007
+int main()
+{
+	ios::sync_with_stdio(0);
+	${0:/* code */}
+	return 0;
+}]]></content>
+	<tabTrigger>b</tabTrigger>
+	<scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

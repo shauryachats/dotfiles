@@ -1,0 +1,10 @@
+{
+	"shell_cmd": "pdflatex $file_name",
+	"variants":
+	[
+		{
+			"name": "Build and view!",
+			"cmd": "pdflatex $file_name && xdg-open $file_base_name.pdf"
+		}
+	]
+}
