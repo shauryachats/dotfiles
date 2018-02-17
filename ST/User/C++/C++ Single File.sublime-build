@@ -1,0 +1,40 @@
+{
+"cmd": ["bash -c \"g++ -g -Wall -Wextra -Wfatal-errors -O2 -Wshadow -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 $file_name -o $file_base_name\""],
+"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+"selector": "source.c, source.c++",
+"shell": true,
+"working_dir": "${file_path}",
+"variants":
+    [
+        {
+          "name": "11 - Build",
+          "shell": true,
+          "cmd": ["bash -c \"g++ -g -Wall -Wextra -Wfatal-errors -std=c++11 -O2 -Wshadow -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 $file_name -o $file_base_name\""]
+        },
+        {
+          "name": "14 - Build",
+          "shell": true,
+          "cmd": ["bash -c \"g++ -g -Wall -Wextra -Wfatal-errors -std=c++14 -O2 -Wshadow -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 $file_name -o $file_base_name\""]
+        },
+        {
+          "name": "17 - Build",
+          "shell": true,
+          "cmd": ["bash -c \"g++ -g -Wall -Wextra -Wfatal-errors -std=c++17 -O2 -Wshadow -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 $file_name -o $file_base_name\""]
+        },
+        {
+          "name": "Build for Graphics",
+          "shell": true,
+          "cmd": ["g++ $file_name -o $file_base_name -lgraph -lX11"]
+        },
+        {
+          "name": "Build for Graphics and RUN!",
+          "shell": true,
+          "cmd": ["g++ $file_name -o $file_base_name -lgraph -lX11 && ./$file_base_name"]
+        },
+        {
+          "name" : "Build using SDL_bgi",
+          "shell" : true,
+          "cmd" : ["g++ $file_name -o $file_base_name /usr/lib/libSDL_bgi.so.2.0.8 -lSDL2 -lX11"]
+        }
+    ] 
+}

@@ -5,3 +5,6 @@ cp ~/.vimrc .vimrc
 
 # Sublime Text files too.
 cp -r ~/.config/sublime-text-3/Packages/User/ ST/ 
+
+# ZSH files, maybe?
+cp ~/.zshrc .zshrc
